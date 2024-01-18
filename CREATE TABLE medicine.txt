@@ -1,0 +1,46 @@
+CREATE TABLE medicine
+(
+  doctor_id INTEGER NOT NULL,
+  name VARCHAR(70),
+  specialization VARCHAR(30),
+  dr_age INTEGER,
+  work_experience INTEGER,
+  cabinet INTEGER,
+  PRIMARY KEY (doctor_id)
+);
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (1, 'Миронова Арина Егоровна', 'терапевт', 37, 13, 117);
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (2, 'Рябинин Тимур Тимурович', 'аллерголог', 50, 31, 216);
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (3, 'Журавлева Полина Сергеевна', 'невролог', 30, 6, 318);
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (4, 'Кочетков Леонид Даниилович', 'терапевт', 43, 19, 123);
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (5, 'Гусева Елизавета Артёмовна', 'хирург', 50, 26, 217);
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (6, 'Прохоров Дмитрий Иванович', 'педиатр', 26, 2, 320);
+
+
+5
+SELECT name, specialization, dr_age, work_experience, cabinet FROM medicine
+SELECT * FROM medicine
+
+6
+SELECT name, specialization, dr_age, work_experience, cabinet FROM medicine ORDER BY work_experience DESC
+SELECT name, specialization, dr_age, work_experience, cabinet FROM medicine ORDER BY work_experience 
+7
+SELECT name, specialization, dr_age, work_experience, cabinet FROM medicine WHERE specialization = 'терапевт'
+8
+SELECT name, specialization, dr_age, work_experience, cabinet FROM medicine WHERE specialization = 'невролог' and work_experience > 5
+9
+INSERT INTO medicine(doctor_id, name, specialization, dr_age, work_experience, cabinet) VALUES (7, 'Снегирев Даниил Григорьевич', 'ортопед', 32, 7, 157);
+10
+UPDATE medicine Set work_experience = 10 WHERE specialization = 'терапевт';
+11
+SELECT COUNT(DISTINCT(work_experience)) FROM medicine
+
+SELECT COUNT(*) FROM medicine WHERE work_experience = 10
+
+12
+SELECT COUNT(*) FROM medicine;
+DELETE FROM medicine WHERE doctor_id = 7;
+SELECT COUNT(*) FROM medicine;
+
+13
+SELECT * FROM medicine
+ 
